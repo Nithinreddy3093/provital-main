@@ -104,21 +104,51 @@
  /* Show dropdown on hover */
 }
 
-/* Mobile View Styles */
+/* General styling for the nav-item */
+.nav-item {
+ display: flex;
+ align-items: center;
+ /* Vertically center the elements */
+ gap: 0.5rem;
+ /* Minimal space between elements */
+ font-size: 1rem;
+}
+
+/* Styling for links and inline elements */
+.nav-item span,
+.nav-item a {
+ color: #333;
+ /* Consistent text color */
+ text-decoration: none;
+ /* No underline for links */
+ font-size: 1rem;
+ /* Font size for all elements */
+ margin: 0;
+ /* Remove default margins */
+}
+
+/* Ensure arrow icon stays aligned */
+.nav-item .arrow-icon {
+ margin-left: auto;
+ /* Push the arrow to the extreme right */
+ font-size: 1rem;
+ color: #333;
+}
+
+/* Hover effect for links */
+.nav-item a:hover {
+ color: #1a73e8;
+}
+/* Mobile Navigation Enhancements */
 @media (max-width: 768px) {
- .header .header-container {
-  flex-wrap: wrap;
- }
-
- .header .hamburger {
-  display: block;
- }
-
- .header .nav {
-  display: none;
- }
-
- /* Mobile Menu positioned below header */
+   .header .nav {
+     display: none;
+    }
+   
+    /* Show only the hamburger icon */
+    .header .hamburger {
+     display: block;
+    }
  .mobile-nav {
   display: flex;
   flex-direction: column;
@@ -126,20 +156,32 @@
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
-  /* Adds space below the header */
  }
 
  .mobile-menu-list {
-  list-style-type: none;
+  list-style: none;
   margin: 0;
   padding: 0;
  }
 
  .mobile-menu-list li {
-  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  /* Aligns text left and arrow right */
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  /* Optional: Separator */
+ }
+
+ .mobile-menu-list li:last-child {
+  border-bottom: none;
+  /* Remove border from the last item */
  }
 
  .mobile-menu-list li a {
+  flex: 1;
+  /* Push arrow to the right */
   color: #333;
   text-decoration: none;
   font-size: 1rem;
@@ -150,10 +192,14 @@
   color: #1a73e8;
  }
 
- .login-signup {
-  position: relative;
+ .arrow-icon {
+  font-size: 1rem;
+  color: #333;
+  margin-left: auto;
+  /* Ensure arrow stays at the rightmost position */
  }
 
+ /* Dropdown Styling */
  .dropdown {
   position: absolute;
   top: 100%;
@@ -167,8 +213,9 @@
 
  .dropdown-row {
   display: flex;
+  justify-content: space-between;
+  /* Align dropdown content */
   align-items: center;
-  gap: 0.5rem;
   margin-bottom: 0.5rem;
  }
 
@@ -206,18 +253,14 @@
 @media (min-width: 769px) {
  .header .hamburger {
   display: none;
-  /* Hide the hamburger icon in fullscreen view */
  }
 
  .header .nav {
   display: flex;
-  /* Show navigation items inline */
   gap: 2rem;
-  /* Gap between navigation items in desktop view */
  }
 
  .mobile-nav {
   display: none;
-  /* Ensure mobile menu is hidden on larger screens */
  }
 }

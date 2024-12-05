@@ -71,25 +71,16 @@ const Header = () => {
       {isMobileMenuOpen && (
         <nav className="mobile-nav">
           <ul className="mobile-menu-list">
-             <li className="nav-item login-signup">
-              
-              
-                <div className="">
-                  <div className="">
-                    <span>Doctor:</span>
-                    <a href="#">Login</a>
-                    <span>/</span>
-                    <a href="#">Signup</a><span className="arrow-icon">→</span>
-                  </div>
-                  <div className="">
-                    <span>Patient:</span>
-                    <a href="#">Login</a>
-                    <span>/</span>
-                    <a href="#">Signup</a><span className="arrow-icon">→</span>
-                  </div>
-                </div>
-              
+          <li className="nav-item">
+              <a href="#" onClick={closeMenu}>Doctor : Login/Signup</a>
+              <span className="arrow-icon">→</span>
             </li>
+ <li className="nav-item">
+              <a href="#" onClick={closeMenu}>Patient : Login/Signup</a>
+              <span className="arrow-icon">→</span>
+            </li>
+
+             
             <li className="nav-item">
               <a href="#" onClick={closeMenu}>Doctors</a>
               <span className="arrow-icon">→</span>
