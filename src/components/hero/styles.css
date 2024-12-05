@@ -1,0 +1,138 @@
+.hero {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 2rem;
+ background: linear-gradient(to right, #f8f9fa, #ffffff);
+ height: 100vh;
+}
+
+.hero-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ /* Two columns: search bar and content */
+ grid-template-rows: auto 1fr;
+ /* Rows for search bar and main content */
+ gap: 1rem;
+ /* Space between grid items */
+ max-width: 1200px;
+ width: 100%;
+}
+
+.search-bar {
+ grid-column: 1 / -1;
+ /* Span across both columns */
+ display: flex;
+ gap: 0.5rem;
+ justify-content: center;
+}
+
+.search-input {
+ padding: 0.75rem;
+ border: 1px solid #ddd;
+ border-radius: 4px;
+ flex: 1;
+ min-width: 200px;
+ max-width: 250px;
+ font-size: 1rem;
+}
+
+.search-button {
+ padding: 0.75rem 1.5rem;
+ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+ color: white;
+ /* Text color is now white */
+ font-size: 1rem;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ text-align: center;
+ /* Centers text */
+}
+
+.search-button:hover {
+ background-color: #006f94;
+}
+
+.hero-content {
+font-family: "Inter", sans-serif;
+ font-optical-sizing: auto;
+ font-weight: 400;
+
+ /* Replace with the desired weight */
+ font-style: normal;
+ display: flex;
+ flex-direction: column;
+ /* Ensure text and elements are in a row */
+ justify-content: flex-end;
+ /* Align content to the right */
+ align-items: center;
+ /* Center the content vertically */
+ text-align: right;
+ /* Align text to the right */
+ padding: 2rem;
+ margin-bottom: 20rem;
+ margin-left: 28rem;
+ /* Add margin below */
+ width: 100%;
+ /* Make sure it takes up full width */
+}
+
+.hero-content h1 {
+ font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  /* Replace with the desired weight */
+  font-style: normal;
+ font-size: 2.5rem;
+ 
+ color: #333;
+ margin-bottom: 1rem;
+ line-height: 1;
+ margin-right: 2rem;
+}
+
+.hero-content .highlight {
+ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+}
+
+.hero-content p {
+ font-size: 1.2rem;
+ color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+ .hero-grid {
+  grid-template-columns: 1fr;
+  /* Single-column layout */
+  grid-template-rows: auto auto;
+  /* Stack the rows */
+ }
+
+ .search-bar {
+  flex-wrap: wrap;
+  /* Stack search inputs on smaller screens */
+  justify-content: flex-start;
+ }
+
+ .search-input {
+  flex: 0 0 100%;
+  /* Full width */
+  margin-bottom: 0.5rem;
+ }
+
+ .search-button {
+  flex: 0 0 100%;
+  /* Full width for the button */
+ }
+
+ .hero-content {
+  align-items: center;
+  /* Center align for smaller screens */
+  text-align: center;
+ }
+}
