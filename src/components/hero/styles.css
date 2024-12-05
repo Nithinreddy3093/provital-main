@@ -5,49 +5,140 @@
  padding: 2rem;
  background: linear-gradient(to right, #f8f9fa, #ffffff);
  height: 100vh;
+ position: relative;
+}
+
+.images-container {
+ display: flex;
+ justify-content: left;
+ align-items: center;
+ gap: 3rem;
+ /* Increased gap between image columns */
+ position: absolute;
+ left: 0;
+ right: 0;
+ top: 50%;
+ transform: translateY(-50%);
+ overflow: hidden;
+ width: 100%;
+ z-index: 1;
+ /* Ensure images are above the wave */
+ max-height: calc(100vh - 100px);
+ /* Ensure images don't go beyond the wave */
+}
+
+.image-column {
+ display: flex;
+ flex-direction: column;
+ width: 300px;
+ overflow: hidden;
+ position: relative;
+}
+
+.image-column img {
+ width: 100%;
+ height: 400px;
+ /* Increased image height */
+ object-fit: cover;
+ border-radius: 12px;
+ margin-bottom: 1rem;
+ /* Space between images */
+}
+
+/* Top-to-bottom scrolling */
+.top-to-bottom {
+ animation: moveTopToBottom 40s linear infinite;
+}
+
+/* Bottom-to-top scrolling */
+.bottom-to-top {
+ animation: moveBottomToTop 40s linear infinite;
+}
+
+/* Keyframes for top-to-bottom scroll */
+@keyframes moveTopToBottom {
+ 0% {
+  transform: translateY(-100%);
+ }
+
+ 50% {
+  transform: translateY(0%);
+ }
+
+ 100% {
+  transform: translateY(100%);
+ }
+}
+
+/* Keyframes for bottom-to-top scroll */
+@keyframes moveBottomToTop {
+ 0% {
+  transform: translateY(100%);
+ }
+
+ 50% {
+  transform: translateY(0%);
+ }
+
+ 100% {
+  transform: translateY(-100%);
+ }
+}
+
+/* Ensure seamless continuous scrolling */
+.image-column .scrolling-images {
+ display: flex;
+ flex-direction: column;
+ animation: moveTopToBottom 20s linear infinite;
+ /* Looping animation */
+}
+
+.image-column .scrolling-images img {
+ margin-bottom: 0;
+ /* Remove margin between images for continuous effect */
 }
 
 .hero-grid {
  display: grid;
  grid-template-columns: 1fr 1fr;
- /* Two columns: search bar and content */
- grid-template-rows: auto 1fr;
- /* Rows for search bar and main content */
  gap: 1rem;
- /* Space between grid items */
  max-width: 1200px;
  width: 100%;
 }
 
 .search-bar {
- grid-column: 1 / -1;
- /* Span across both columns */
+ position: absolute;
+ bottom: 40%;
+ left: 50%;
+ transform: translateX(-50%);
  display: flex;
  gap: 0.5rem;
  justify-content: center;
+ background: white;
+ padding: 1rem;
+ border-radius: 8px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ z-index: 10;
+ width: 80%;
+ max-width: 1000px;
 }
 
-.search-input {
- padding: 0.75rem;
+.search-input,
+.search-button {
+ padding: 0.5rem;
  border: 1px solid #ddd;
  border-radius: 4px;
- flex: 1;
- min-width: 200px;
- max-width: 250px;
  font-size: 1rem;
+ box-sizing: border-box;
+ flex: 1;
 }
 
 .search-button {
- padding: 0.75rem 1.5rem;
  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
  color: white;
- /* Text color is now white */
- font-size: 1rem;
  border: none;
- border-radius: 4px;
  cursor: pointer;
  text-align: center;
- /* Centers text */
 }
 
 .search-button:hover {
@@ -55,41 +146,22 @@
 }
 
 .hero-content {
-font-family: "Inter", sans-serif;
- font-optical-sizing: auto;
- font-weight: 400;
-
- /* Replace with the desired weight */
- font-style: normal;
+ grid-column: 2;
+ text-align: right;
  display: flex;
  flex-direction: column;
- /* Ensure text and elements are in a row */
- justify-content: flex-end;
- /* Align content to the right */
- align-items: center;
- /* Center the content vertically */
- text-align: right;
- /* Align text to the right */
+ justify-content: center;
  padding: 2rem;
  margin-bottom: 20rem;
- margin-left: 28rem;
- /* Add margin below */
- width: 100%;
- /* Make sure it takes up full width */
 }
 
 .hero-content h1 {
  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  /* Replace with the desired weight */
-  font-style: normal;
+ font-weight: 500;
  font-size: 2.5rem;
- 
  color: #333;
  margin-bottom: 1rem;
- line-height: 1;
- margin-right: 2rem;
+ line-height: 1.2;
 }
 
 .hero-content .highlight {
@@ -108,31 +180,104 @@ font-family: "Inter", sans-serif;
 @media (max-width: 768px) {
  .hero-grid {
   grid-template-columns: 1fr;
-  /* Single-column layout */
-  grid-template-rows: auto auto;
-  /* Stack the rows */
  }
 
  .search-bar {
   flex-wrap: wrap;
-  /* Stack search inputs on smaller screens */
   justify-content: flex-start;
  }
 
  .search-input {
   flex: 0 0 100%;
-  /* Full width */
   margin-bottom: 0.5rem;
  }
 
  .search-button {
   flex: 0 0 100%;
-  /* Full width for the button */
  }
 
- .hero-content {
+.hero-content {
+ text-align: left;
+ padding: 1rem;
+ padding-bottom: 20rem;
+ padding-right: 50rem;
+ margin: 0;
+ /* Remove margin to align content to the very top-left */
+ justify-content: flex-start;
+ display: flex;
+ flex-direction: column;
+ /* Stack heading and paragraph vertically */
+ align-items: flex-start;
+ /* Align content to the left */
+ margin-left: 0;
+ /* Ensure no left margin */
+ margin-top: 0;
+ 
+ /* Ensure no top margin */
+}
+
+.hero-content h1 {
+ font-size: 1.5rem;
+ /* Smaller heading size for mobile */
+ line-height: 1.3;
+ margin: 0;
+ /* Remove margin from the heading */
+}
+
+.hero-content p {
+ font-size: 0.9rem;
+ /* Smaller paragraph size for mobile */
+ line-height: 1.6;
+ margin-top: 0.5rem;
+ /* Space between heading and paragraph */
+}
+ .images-container {
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  /* Center align for smaller screens */
-  text-align: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  max-height: none;
+  z-index: 0;
+  gap: 1.5rem;
+  padding-top: 30rem;
+ }
+
+ .image-column {
+  position: static;
+  width: auto;
+  height: 100%;
+  flex-direction: row;
+ }
+
+ .image-column img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 1rem;
+  /* Remove excessive margin */
+ }
+
+ /* Animation for right-to-left scrolling */
+ .top-to-bottom,
+ .bottom-to-top {
+  animation: moveRightToLeft 20s linear infinite;
+ }
+
+ /* Keyframes for right-to-left scroll */
+ @keyframes moveRightToLeft {
+  0% {
+   transform: translateX(100%);
+  }
+
+  50% {
+   transform: translateX(0%);
+  }
+
+  100% {
+   transform: translateX(-100%);
+  }
  }
 }

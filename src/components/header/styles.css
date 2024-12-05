@@ -1,7 +1,16 @@
 .header {
- background-color: #fff;
- box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
- padding: 0.5rem;
+   position: fixed;
+   /* Makes the header stay fixed at the top */
+   top: 0;
+   left: 0;
+   width: 100%;
+   /* Ensure the header spans the full width */
+   background-color: rgba(255, 255, 255, 0.95);
+   /* Slightly transparent background */
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   z-index: 1000;
+   /* Ensures the header overlays content */
+   padding: 0.5rem ;
 }
 
 .header .header-container {
