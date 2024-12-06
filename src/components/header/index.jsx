@@ -45,24 +45,28 @@ const Header = () => {
               <a href="#">Doctors</a>
             </li>
             <li className="nav-item login-signup">
-              <a href="#" onClick={toggleDropdown}>Login / Signup</a>
-              {isDropdownOpen && (
-                <div className="dropdown">
-                  <div className="dropdown-row">
-                    <span>Doctor:</span>
-                    <a href="#">Login</a>
-                    <span>/</span>
-                    <a href="#">Signup</a>
-                  </div>
-                  <div className="dropdown-row">
-                    <span>Patient:</span>
-                    <a href="#">Login</a>
-                    <span>/</span>
-                    <a href="#">Signup</a>
-                  </div>
-                </div>
-              )}
-            </li>
+  <a href="#" onClick={toggleDropdown}>
+
+    Login / Signup <span className="dropdown-arrow">▼</span>
+  </a>
+  {isDropdownOpen && (
+    <div className="dropdown">
+      <div className="dropdown-row">
+        <span>Doctor:</span>
+        <a href="#">Login</a>
+        <span>/</span>
+        <a href="#">Signup</a>
+      </div>
+      <div className="dropdown-row">
+        <span>Patient:</span>
+        <a href="#">Login</a>
+        <span>/</span>
+        <a href="#">Signup</a>
+      </div>
+    </div>
+  )}
+</li>
+
           </ul>
         </nav>
       </div>

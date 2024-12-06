@@ -26,7 +26,10 @@
  max-height: calc(100vh - 100px);
  /* Ensure images don't go beyond the wave */
 }
-
+.wave-container {
+ margin-bottom: 50px;
+ /* Adjust this value to move the wave higher */
+}
 .image-column {
  display: flex;
  flex-direction: column;
