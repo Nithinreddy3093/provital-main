@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './styles.css';
 
 const leftImages = [
-  '/image1l.png',
-  '/image2l.png',
-  '/image3l.png',
-  '/image4l.png'
+  '/image1l.webp',
+  '/image2l.webp',
+  '/image3l.webp',
+  '/image4l.webp'
 ];
 
 const rightImages = [
-  '/image1r.png',
-  '/image2r.png',
-  '/image3r.png',
-  '/image4r.png'
+  '/image1r.webp',
+  '/image2r.webp',
+  '/image3r.webp',
+  '/image4r.webp'
 ];
 
 function Hero() {

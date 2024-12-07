@@ -60,7 +60,7 @@ function How() {
 
           <div className="card">
             <div className="card-image-container">
-              <img src="/image2s.png" alt="Physical activity" className="card-image" />
+              <img src="/image2s.webp" alt="Physical activity" className="card-image" />
               <div className="card-header">
                 <img src="/heart2.png" alt="Nutrition Icon" className="card-header-icon" />
                 <span className="status">32 minutes</span>
@@ -74,7 +74,7 @@ function How() {
 
           <div className="card">
             <div className="card-image-container">
-              <img src="/image3s.png" alt="Restorative sleep" className="card-image" />
+              <img src="/image3s.webp" alt="Restorative sleep" className="card-image" />
               <div className="card-header">
               <img src="/moon.png
         " alt="Nutrition Icon" className="card-header-icon" />
@@ -89,7 +89,7 @@ function How() {
 
           <div className="card">
             <div className="card-image-container">
-              <img src="/image4s.png" alt="Stress management" className="card-image" />
+              <img src="/image4s.webp" alt="Stress management" className="card-image" />
               <div className="card-header">
                <img src="/green.png" alt="Nutrition Icon" className="card-header-icon" />
                 <span className="status">60 bpm</span>
@@ -103,7 +103,7 @@ function How() {
 
           <div className="card">
             <div className="card-image-container">
-              <img src="/image5s.png" alt="Social connection" className="card-image" />
+              <img src="/image5s.webp" alt="Social connection" className="card-image" />
               <div className="card-header">
                <img src="/heart2.png" alt="Nutrition Icon" className="card-header-icon" />
                 <span className="status">Feeling better</span>
@@ -117,7 +117,7 @@ function How() {
 
           <div className="card">
             <div className="card-image-container">
-              <img src="/image6s.png" alt="Substance abuse" className="card-image" />
+              <img src="/image6s.webp" alt="Substance abuse" className="card-image" />
               <div className="card-header">
                <img src="/clock.png" alt="Nutrition Icon" className="card-header-icon" />
                 <span className="status">62 days</span>
