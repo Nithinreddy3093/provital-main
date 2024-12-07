@@ -132,7 +132,13 @@
  cursor: pointer;
  text-align: center;
 }
+.image-column img.loading {
+ opacity: 0.5;
+}
 
+.image-column img.loaded {
+ opacity: 1;
+}
 .search-button:hover {
  background-color: #006f94;
 }

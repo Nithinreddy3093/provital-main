@@ -5,41 +5,43 @@ const leftImages = [
   '/image1l.webp',
   '/image2l.webp',
   '/image3l.webp',
-  '/image4l.webp'
+  '/image4l.webp',
 ];
 
 const rightImages = [
   '/image1r.webp',
   '/image2r.webp',
   '/image3r.webp',
-  '/image4r.webp'
+  '/image4r.webp',
 ];
 
 function Hero() {
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
+  // Preload all images
   useEffect(() => {
     const preloadImages = (images) => {
-      return images.map(src => {
-        return new Promise((resolve) => {
-          const img = new Image();
-          img.src = src;
-          img.onload = () => resolve(src);
-          img.onerror = () => {
-            console.warn(`Failed to load image: ${src}`);
-            resolve(src);
-          };
-        });
-      });
+      return Promise.all(
+        images.map((src) => {
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = resolve;
+            img.onerror = resolve; // Handle load errors
+          });
+        })
+      );
     };
 
     const loadAllImages = async () => {
       try {
-        const allImagePromises = preloadImages([...leftImages, ...rightImages]);
-        await Promise.allSettled(allImagePromises);
+        await Promise.all([
+          preloadImages(leftImages),
+          preloadImages(rightImages),
+        ]);
         setImagesLoaded(true);
       } catch (error) {
-        console.error('Image loading error:', error);
+        console.error('Error preloading images:', error);
       }
     };
 
@@ -47,19 +49,14 @@ function Hero() {
   }, []);
 
   const renderImageColumn = (images, animationClass) => (
-    <div className={`image-column ${animationClass}`}>
+    <div className={`image-column ${imagesLoaded ? animationClass : ''}`}>
       {images.concat(images).map((src, index) => (
         <img 
           key={`${src}-${index}`} 
           src={src} 
-          alt={`Scroll Image ${index % images.length + 1}`}
+          alt={`Scrolling image ${index % images.length}`}
           loading="eager"
-          width="300"
-          height="200"
-          style={{
-            opacity: imagesLoaded ? 1 : 0.5,
-            transition: 'opacity 0.3s ease-in-out'
-          }}
+          className={imagesLoaded ? 'loaded' : 'loading'}
         />
       ))}
     </div>
@@ -100,38 +97,34 @@ function Hero() {
           <button className="search-button">🔍Find now</button>
         </div>
       </div>
-<div className="wave-container">
-  <svg
-    id="line"
-    style={{
-      width: "100%",
-      position: "absolute",
-      bottom: "30",
-      left: "0",
-    }}
-    viewBox="0 0 1440 50" /* Adjusted viewBox to fit the height of the line */
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-     <linearGradient id="sw-gradient-0" x1="0" x2="1" y1="0" y2="0">
-        <stop stopColor="#FBAB7E" offset="0%"></stop>
-        <stop stopColor="#F7CE68" offset="50%"></stop>
-        <stop stopColor="#c00d0d" offset="100%"></stop>
-      </linearGradient>
-    </defs>
-    <rect
-      x="0"
-      y="0" /* Position the rectangle at the bottom */
-      width="1440"
-      height="30" /* Set the thickness of the line */
-      fill="url(#sw-gradient-0)"
-      
-    />
-  </svg>
-</div>
-
-
-
+      <div className="wave-container">
+        <svg
+          id="line"
+          style={{
+            width: "100%",
+            position: "absolute",
+            bottom: "30",
+            left: "0",
+          }}
+          viewBox="0 0 1440 50"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="sw-gradient-0" x1="0" x2="1" y1="0" y2="0">
+              <stop stopColor="#FBAB7E" offset="0%"></stop>
+              <stop stopColor="#F7CE68" offset="50%"></stop>
+              <stop stopColor="#c00d0d" offset="100%"></stop>
+            </linearGradient>
+          </defs>
+          <rect
+            x="0"
+            y="0"
+            width="1440"
+            height="30"
+            fill="url(#sw-gradient-0)"
+          />
+        </svg>
+      </div>
     </div>
   );
 }
