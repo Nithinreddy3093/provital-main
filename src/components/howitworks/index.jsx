@@ -46,7 +46,7 @@ function How() {
         <div className="card-container" ref={cardContainerRef}>
           <div className="card">
   <div className="card-image-container">
-    <img src="/image1s.png" alt="Nutrition" className="card-image" />
+    <img src="/image1s.webp" alt="Nutrition" className="card-image" />
     <div className="card-header">
       <img src="/heart.png" alt="Nutrition Icon" className="card-header-icon" />
       <span className="status">121/80 mmHg</span>

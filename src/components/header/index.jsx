@@ -45,72 +45,81 @@ const Header = () => {
               <a href="#">Doctors</a>
             </li>
             <li className="nav-item login-signup">
-  <a href="#" onClick={toggleDropdown}>
-
-    Login / Signup <span className="dropdown-arrow">▼</span>
-  </a>
-  {isDropdownOpen && (
-    <div className="dropdown">
-      <div className="dropdown-row">
-        <span>Doctor:</span>
-        <a href="#">Login</a>
-        <span>/</span>
-        <a href="#">Signup</a>
-      </div>
-      <div className="dropdown-row">
-        <span>Patient:</span>
-        <a href="#">Login</a>
-        <span>/</span>
-        <a href="#">Signup</a>
-      </div>
-    </div>
-  )}
-</li>
-
+              <a href="#" onClick={toggleDropdown}>
+                Login / Signup <span className="dropdown-arrow">▼</span>
+              </a>
+              {isDropdownOpen && (
+                <div className="dropdown">
+                  <div className="dropdown-row">
+                    <span>Doctor:</span>
+                    <a href="#">Login</a>
+                    <span>/</span>
+                    <a href="#">Signup</a>
+                  </div>
+                  <div className="dropdown-row">
+                    <span>Patient:</span>
+                    <a href="#">Login</a>
+                    <span>/</span>
+                    <a href="#">Signup</a>
+                  </div>
+                </div>
+              )}
+            </li>
           </ul>
         </nav>
       </div>
 
-      {/* The mobile menu is placed here, outside of the header */}
       {isMobileMenuOpen && (
         <nav className="mobile-nav">
           <ul className="mobile-menu-list">
-          <li className="nav-item">
-              <a href="#" onClick={closeMenu}>Doctor : Login/Signup</a>
-              <span className="arrow-icon">→</span>
-            </li>
- <li className="nav-item">
-              <a href="#" onClick={closeMenu}>Patient : Login/Signup</a>
-              <span className="arrow-icon">→</span>
-            </li>
-
-             
             <li className="nav-item">
-              <a href="#" onClick={closeMenu}>Doctors</a>
+              <a href="#" onClick={closeMenu}>
+                Doctor : Login/Signup
+              </a>
               <span className="arrow-icon">→</span>
             </li>
             <li className="nav-item">
-              <a href="#" onClick={closeMenu}>List your practice</a>
+              <a href="#" onClick={closeMenu}>
+                Patient : Login/Signup
+              </a>
               <span className="arrow-icon">→</span>
             </li>
             <li className="nav-item">
-              <a href="#" onClick={closeMenu}>For Employers</a>
+              <a href="#" onClick={closeMenu}>
+                Doctors
+              </a>
               <span className="arrow-icon">→</span>
             </li>
             <li className="nav-item">
-              <a href="#" onClick={closeMenu}>Courses</a>
+              <a href="#" onClick={closeMenu}>
+                List your practice
+              </a>
               <span className="arrow-icon">→</span>
             </li>
             <li className="nav-item">
-              <a href="#" onClick={closeMenu}>Books</a>
+              <a href="#" onClick={closeMenu}>
+                For Employers
+              </a>
               <span className="arrow-icon">→</span>
             </li>
             <li className="nav-item">
-              <a href="#" onClick={closeMenu}>Speakers</a>
+              <a href="#" onClick={closeMenu}>
+                Courses
+              </a>
               <span className="arrow-icon">→</span>
             </li>
-            
-           
+            <li className="nav-item">
+              <a href="#" onClick={closeMenu}>
+                Books
+              </a>
+              <span className="arrow-icon">→</span>
+            </li>
+            <li className="nav-item">
+              <a href="#" onClick={closeMenu}>
+                Speakers
+              </a>
+              <span className="arrow-icon">→</span>
+            </li>
           </ul>
         </nav>
       )}

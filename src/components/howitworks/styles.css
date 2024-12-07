@@ -96,7 +96,6 @@
  font-weight: 600;
 }
 
-/* Rest of the previous CSS remains the same */
 .card {
  flex: 0 0 350px;
  background-color: white;
@@ -141,7 +140,6 @@
  text-align: left;
  font-weight: 600;
  font-family: "Inter", sans-serif;
- /* Align the heading text to the left */
 }
 
 .card p {
@@ -150,15 +148,12 @@
  line-height: 1.4;
  text-align: left;
  font-family: "Inter", sans-serif;
- /* Align the paragraph text to the left */
 }
 
-/* Button Container - to place under Lifestyle header */
 .button-container {
  display: flex;
  gap: 10px;
  justify-content: flex-start;
- /* Align buttons to the left */
  margin-top: 20px;
  margin-bottom: 20px;
  margin-left: 3rem;
@@ -168,35 +163,39 @@
  background-color: white;
  color: black;
  border: 1px solid black;
- /* Add a border for the button */
  padding: 5px 20px;
  font-size: 14px;
  border-radius: 20px;
  cursor: pointer;
 }
+
 .card-header .card-header-icon {
  width: 20px;
- /* Resize the image */
  height: 20px;
- /* Resize the image */
  object-fit: cover;
- /* Maintain aspect ratio */
  border-radius: 50%;
- 
- /* Optionally, make the image circular */
 }
 
 .card-header .status {
  font-size: 12px;
  font-weight: 600;
 }
+
 .button-container button:hover {
  background-color: black;
- /* Hover background color */
  color: white;
- /* Text color on hover */
-
- /* Remove border radius on hover */
  border-color: white;
- /* Change border color on hover */
+}
+
+@media (max-width: 768px) {
+ .button-container {
+  margin-left: 1.5rem;
+  gap: 5px;
+ }
+
+ .button-container button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 15px;
+ }
 }
