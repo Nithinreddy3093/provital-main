@@ -1,26 +1,25 @@
 ---
 
-# ProVital  
+# ProVital
 
 ## Overview  
 This repository contains the **frontend** of **ProVital**, a health monitoring system designed to provide an intuitive user experience for real-time health tracking.
 
 ## Features  
 - **Dashboard:** Displays key health metrics in a visually appealing layout.  
-- **Responsive Design:** Optimized for devices of all sizes.  
+- **Responsive Design:** Optimized for devices of all sizes.
 
 ## Technologies Used  
 - **Framework:** React.js  
-- **Styling:**  CSS Modules  
-
+- **Styling:** CSS Modules  
 
 ## Installation  
-Follow these steps to set up the frontend locally:  
+Follow these steps to set up the frontend locally:
 
 1. **Clone the repository:**  
    ```bash  
    git clone https://github.com/your-username/Provital.git  
-   ```  
+
 
 2. **Navigate to the project directory:**  
    ```bash  
