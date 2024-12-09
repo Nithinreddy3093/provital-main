@@ -3,8 +3,7 @@
 # ProVital
 
 ## Overview  
-This repository contains the **frontend** of **ProVital**, a health monitoring system designed to provide an intuitive user experience for real-time health tracking.
-
+"This repository contains the user-facing part of ProVital, a health tracking system focused on offering a seamless and interactive experience for monitoring health metrics in real-time."
 ## Features  
 - **Dashboard:** Displays key health metrics in a visually appealing layout.  
 - **Responsive Design:** Optimized for devices of all sizes.
