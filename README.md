@@ -29,15 +29,25 @@ Follow these steps to set up the frontend locally:
    cd Provital  
    ```  
 
-3. **Install dependencies:**  
+3. **Add new remote origin:**  
+   ```bash  
+   git remote add new-origin https://github.com/Nithinreddy3093/provital-main.git  
+   ```  
+
+4. **Install dependencies:**  
    ```bash  
    npm install  
    ```  
 
-4. **Start the application:**  
+5. **Start the application:**  
    ```bash  
    npm start  
    ```  
 
-5. **Access the application:**  
-   Open your browser and go to [http://localhost:3000](http://localhost:3000).  
+6. **Access the application:**  
+   Open your browser and go to [http://localhost:3000](http://localhost:3000).
+
+7. **Push to new remote origin:**  
+   ```bash  
+   git push new-origin main  
+   ```
