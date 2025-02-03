@@ -57,7 +57,7 @@ Push to your fork and create a pull request.
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-For any questions or issues, feel free to contact us at support@provital.com.
+For any questions or issues, feel free to contact us at marthalanithinreddy3093@gmail.com.
 
 vbnet
 Copy
